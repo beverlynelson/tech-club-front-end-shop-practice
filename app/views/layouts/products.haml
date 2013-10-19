@@ -1,0 +1,25 @@
+!!! 5
+%html{:lang => 'en'}
+  %head
+    %title = 'Basic Shop App Front End Practice'
+    %meta{:charset => 'utf-8'}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    = javascript_include_tag "vendor/custom.modernizr"
+    = stylesheet_link_tag    "application" 
+    -#<!--[if lt IE 8]>
+    -#:javascript
+    -#  window.location = '/upgrade.html';
+    -#<![endif]-->
+    -#<!--[if lt IE 9]>
+    -#= javascript_include_tag 'https://html5shim.googlecode.com/svn/trunk/html5.js'
+    -#<![endif]-->
+
+  %body
+    .row
+      .large-12.columns
+        = render 'shared/header'
+        .row
+          = render 'shared/sidebar'
+      
+          = yield 
+        = render 'shared/footer'
